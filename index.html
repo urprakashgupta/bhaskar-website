@@ -1,49 +1,56 @@
-﻿<header>
-  <nav>
-    <a href="index.html" class="logo">TheFitBhaskar.in</a>
-
-    <div class="menu">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="workout-programs.html">Programs</a>
-      <a href="diet.html">Diet</a>
-      <a href="results.html">Results</a>
-      <a href="plans.html">Plans</a>
-      <a href="contact.html">Contact</a>
-    </div>
-  </nav>
-</header>
-
-<!DOCTYPE html>
-<html>
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Home | TheFitBhaskar.in</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<!-- Navbar -->
-<?php include 'nav.html'; ?> <!-- If no PHP, paste navbar manually -->
+<div id="site-header"></div>
 
-<div class="page-title">
-  <h1>Welcome to TheFitBhaskar.in</h1>
-  <p>Your fitness transformation starts here — strong body, strong mindset!</p>
+<div class="main-container">
+  <section class="page-hero">
+    <h1>Transform Your Body & Mind</h1>
+    <p>
+      TheFitBhaskar.in – practical fitness coaching for real people:
+      gym + home workout, Indian diet, mindset and consistency.
+    </p>
+
+    <div class="btn-row" style="justify-content:center;">
+      <button class="btn-primary" onclick="location.href='plans.html'">
+        View Coaching Plans
+      </button>
+      <button class="btn-outline" onclick="location.href='contact.html'">
+        Apply for Coaching
+      </button>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Why TheFitBhaskar?</h2>
+    <p class="section-subtitle">
+      Fat-to-fit personal journey, balanced with office & daily life – same formula shared with you.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Realistic Plans</h3>
+        <p>No 2–3 hour bro-split, no extreme diet. Simple plans that fit your actual routine.</p>
+      </div>
+      <div class="card">
+        <h3>Indian Diet Focus</h3>
+        <p>Roti, dal, chawal, sabzi – sab allowed. We manage quantity, timing, and protein.</p>
+      </div>
+      <div class="card">
+        <h3>Mindset & Discipline</h3>
+        <p>“Main girunga, par phir uthunga” – we build long-term habits, not 21-day magic.</p>
+      </div>
+    </div>
+  </section>
 </div>
 
-<!-- Content -->
-<div class="container">
-  <h2>🔥 Fat-to-Fit Journey</h2>
-  <p>This website is your personal guide to gym, diet and daily motivation.</p>
-</div>
-
-<!-- Footer -->
-<footer>
-  © <span id="year"></span> TheFitBhaskar.in • All Rights Reserved
-</footer>
-
-<script>
-  document.getElementById("year").innerHTML = new Date().getFullYear();
-</script>
-
+<div id="site-footer"></div>
+<script src="js/nav.js"></script>
 </body>
 </html>
