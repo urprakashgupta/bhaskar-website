@@ -1,0 +1,180 @@
+:root {
+  --bg: #0f172a;
+  --surface: #111827;
+  --card: #16213c;
+  --border: #1f2937;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #f97316;
+  --accent-strong: #ea580c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  background: radial-gradient(circle at 20% 20%, rgba(249, 115, 22, 0.08), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(14, 165, 233, 0.08), transparent 40%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.page-header h1 {
+  font-size: 2.4rem;
+  margin: 0 0 0.5rem;
+  letter-spacing: 0.01em;
+}
+
+.page-header p {
+  margin: 0.25rem 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.muscle-grid,
+.exercise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.muscle-card,
+.exercise-card {
+  background: linear-gradient(145deg, var(--surface), var(--card));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.muscle-card:hover,
+.exercise-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(249, 115, 22, 0.6);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+}
+
+.muscle-card h2,
+.exercise-card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.01em;
+}
+
+.muscle-card p {
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.65rem 1rem;
+  background: linear-gradient(120deg, var(--accent), var(--accent-strong));
+  color: #0b0f1a;
+  font-weight: 700;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  transition: transform 150ms ease, box-shadow 150ms ease, filter 150ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(234, 88, 12, 0.35);
+  filter: brightness(1.05);
+}
+
+.exercise-card h3 {
+  font-size: 1.1rem;
+}
+
+.exercise-meta p {
+  margin: 0.15rem 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.how-to,
+.benefits,
+.mistakes,
+.video-link {
+  margin-top: 1rem;
+}
+
+.how-to h4,
+.benefits h4,
+.mistakes h4,
+.video-link h4 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  color: #fbbf24;
+  letter-spacing: 0.01em;
+}
+
+.exercise-card ol,
+.exercise-card ul {
+  margin: 0.25rem 0 0.5rem 1.1rem;
+  padding-left: 1.1rem;
+  color: var(--text);
+}
+
+.exercise-card li {
+  margin: 0.15rem 0;
+  font-size: 0.97rem;
+}
+
+.video-link p {
+  margin: 0;
+  color: var(--muted);
+  font-family: "Courier New", monospace;
+  font-size: 0.95rem;
+}
+
+.muscle-subsection {
+  margin-bottom: 2.5rem;
+}
+
+.muscle-subsection h2 {
+  margin: 0 0 0.8rem;
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 720px) {
+  main {
+    padding: 2.5rem 1rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .muscle-card,
+  .exercise-card {
+    padding: 1.1rem 1.25rem;
+  }
+}
