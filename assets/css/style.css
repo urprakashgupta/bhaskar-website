@@ -425,6 +425,84 @@ textarea {
   color: var(--primary-dark);
 }
 
+.admin-card {
+  margin-top: 10px;
+}
+
+.admin-form {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.admin-panel {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.admin-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-posts table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.admin-posts th,
+.admin-posts td {
+  padding: 8px;
+  border: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.admin-posts th {
+  background: rgba(14, 165, 233, 0.08);
+}
+
+.admin-badge {
+  font-weight: 700;
+  color: var(--primary-dark);
+}
+
+.admin-controls {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.admin-btn {
+  padding: 6px 10px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.admin-btn.approve {
+  background: rgba(16, 185, 129, 0.12);
+  color: #166534;
+  border-color: #16a34a;
+}
+
+.admin-btn.reject {
+  background: rgba(239, 68, 68, 0.12);
+  color: #b91c1c;
+  border-color: #ef4444;
+}
+
+.hidden {
+  display: none !important;
+}
+
 @media (max-width: 960px) {
   .blog-layout {
     grid-template-columns: 1fr;

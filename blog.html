@@ -75,6 +75,35 @@
       </div>
     </section>
 
+    <section class="section">
+      <div class="wrapper">
+        <div class="card admin-card">
+          <h2 class="section-heading">Admin Panel</h2>
+          <p class="section-subtext">Log in to review all submissions and set approval to Yes/No.</p>
+          <form id="admin-form" class="admin-form">
+            <div class="form-group">
+              <label for="admin-id">Admin ID</label>
+              <input id="admin-id" class="blog-input" type="text" placeholder="Admin ID" required>
+            </div>
+            <div class="form-group">
+              <label for="admin-pass">Password</label>
+              <input id="admin-pass" class="blog-input" type="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-secondary admin-login-btn">Login</button>
+            <div class="form-message admin-message" aria-live="polite"></div>
+          </form>
+
+          <div id="admin-panel" class="admin-panel hidden">
+            <div class="admin-actions">
+              <h3 class="section-heading">All Submissions</h3>
+              <button class="btn btn-secondary" id="refresh-admin-posts">Refresh</button>
+            </div>
+            <div id="admin-posts" class="admin-posts">Loading...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <script src="blog.js"></script>
   </main>
 
