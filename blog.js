@@ -1,5 +1,5 @@
 // blog.js - Fetch and submit community blog posts via Google Apps Script API
-const API_URL = "https://script.google.com/macros/s/AKfycbzuvRCudR7KDJecyqdnZqOupOYez0flI_YcGriS_RdzHxtcPYuP4-sPYg8SEe4rVOMSrQ/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbyjoPoOuT2ULhFzOVO82LzXlsbkNGOdUS9iTve-nn5Pq6Y8BHzC4hO4XzBSErZw0wl-5w/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("#blog-form");
@@ -86,8 +86,8 @@ document.addEventListener("DOMContentLoaded", () => {
     try {
       const res = await fetch(API_URL, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload)
+        headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+        body: new URLSearchParams(payload)
       });
 
       if (!res.ok) {
