@@ -1,5 +1,5 @@
 // blog.js - Fetch and submit community blog posts via Google Apps Script API
-const API_URL = "https://script.google.com/macros/s/AKfycbxg8P0I380IXY9c6lLCDFKra14l7vShj6FLlgaepWvIxnOMgguD8Xy_TI8RKmse21XgoA/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycby3aIe3AoHp_PMb45Y41dkOWW7j3LJXZpuXr3pImFWjk7OwkxHIZ7woOVu41TYDhfDEew/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("#blog-form");
@@ -55,14 +55,14 @@ document.addEventListener("DOMContentLoaded", () => {
       blogList.innerHTML = "<p>Loading posts...</p>";
     }
     try {
-      const res = await fetch(API_URL);
+      const res = await fetch(API_URL, { method: "GET", mode: "cors", cache: "no-cache" });
       if (!res.ok) throw new Error(`API error (${res.status})`);
       const data = await res.json();
       if (data.status !== "success") throw new Error("API returned an error status.");
       renderPosts(data.posts || []);
     } catch (err) {
       if (blogList) {
-        blogList.innerHTML = `<p class="form-message error">Could not load blogs. Please try again later.</p>`;
+        blogList.innerHTML = `<p class="form-message error">Could not load blogs (network/CORS). Please try again or check API deployment.</p>`;
       }
       console.error(err);
     }
