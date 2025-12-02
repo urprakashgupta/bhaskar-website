@@ -42,6 +42,32 @@
         </div>
       </section>
 
+      <section class="section" id="community">
+        <div class="grid-2">
+          <div class="card">
+            <h2 class="section-heading">Share your post</h2>
+            <p class="section-subtext">Write anything about fitness, diet, or lifestyle. It saves locally in your browser.</p>
+            <form id="community-form">
+              <div class="field">
+                <label for="post-author">Your name</label>
+                <input id="post-author" name="author" type="text" placeholder="e.g., Bhaskar" maxlength="80" required>
+              </div>
+              <div class="field">
+                <label for="post-body">Your post</label>
+                <textarea id="post-body" name="body" placeholder="Share your thoughts..." maxlength="1200" required></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Publish</button>
+              <p class="note">Posts stay on this device only (localStorage). Clear browser data to remove.</p>
+            </form>
+          </div>
+          <div class="card">
+            <div class="section-heading">Community posts</div>
+            <div class="section-subtext">Newest first. Date and name are shown under each post.</div>
+            <div id="community-posts" class="community-feed" aria-live="polite"></div>
+          </div>
+        </div>
+      </section>
+
       <section class="section">
         <h2 class="section-heading">Latest Posts</h2>
         <div class="grid-3">

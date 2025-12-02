@@ -315,6 +315,42 @@ textarea {
   resize: vertical;
 }
 
+.community-feed {
+  display: grid;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.community-post {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px;
+  box-shadow: var(--shadow);
+}
+
+.community-body {
+  margin: 6px 0 8px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.community-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.community-empty {
+  padding: 10px;
+  border: 1px dashed var(--border);
+  border-radius: 10px;
+  color: var(--muted);
+}
+
 /* 9) Footer */
 .footer {
   padding: 28px 0 32px;

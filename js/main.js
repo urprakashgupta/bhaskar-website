@@ -118,6 +118,100 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // Community blog posts (localStorage on blog page)
+  const communityForm = document.querySelector("#community-form");
+  const communityFeed = document.querySelector("#community-posts");
+  if (communityForm && communityFeed) {
+    const storageKey = "communityPosts";
+    let storageOk = true;
+    try {
+      const testKey = "__community_test";
+      localStorage.setItem(testKey, "1");
+      localStorage.removeItem(testKey);
+    } catch (err) {
+      storageOk = false;
+    }
+
+    const readPosts = () => {
+      if (!storageOk) return [];
+      try {
+        const raw = localStorage.getItem(storageKey);
+        return raw ? JSON.parse(raw) : [];
+      } catch (err) {
+        return [];
+      }
+    };
+
+    const savePosts = posts => {
+      if (!storageOk) return;
+      localStorage.setItem(storageKey, JSON.stringify(posts.slice(0, 200)));
+    };
+
+    const renderPosts = () => {
+      communityFeed.innerHTML = "";
+      const posts = readPosts().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+      if (!posts.length) {
+        const empty = document.createElement("div");
+        empty.className = "community-empty";
+        empty.textContent = storageOk
+          ? "No posts yet. Be the first to share!"
+          : "Storage is blocked in this browser. Posts cannot be saved.";
+        communityFeed.appendChild(empty);
+        return;
+      }
+
+      posts.forEach(post => {
+        const item = document.createElement("article");
+        item.className = "community-post";
+
+        const body = document.createElement("p");
+        body.className = "community-body";
+        body.textContent = post.body || "";
+
+        const meta = document.createElement("div");
+        meta.className = "community-meta";
+        const date = document.createElement("span");
+        date.textContent = new Date(post.createdAt || Date.now()).toLocaleDateString();
+        const author = document.createElement("span");
+        author.textContent = post.author ? `— ${post.author}` : "— Anonymous";
+        meta.appendChild(date);
+        meta.appendChild(author);
+
+        item.appendChild(body);
+        item.appendChild(meta);
+        communityFeed.appendChild(item);
+      });
+    };
+
+    communityForm.addEventListener("submit", e => {
+      e.preventDefault();
+      if (!storageOk) {
+        alert("Cannot save posts because storage is blocked in this browser.");
+        return;
+      }
+      const authorInput = communityForm.querySelector("#post-author");
+      const bodyInput = communityForm.querySelector("#post-body");
+      const author = authorInput?.value.trim() || "Anonymous";
+      const body = bodyInput?.value.trim();
+      if (!body) {
+        alert("Write something before publishing.");
+        return;
+      }
+      const posts = readPosts();
+      posts.unshift({
+        id: Date.now(),
+        author,
+        body,
+        createdAt: new Date().toISOString()
+      });
+      savePosts(posts);
+      communityForm.reset();
+      renderPosts();
+    });
+
+    renderPosts();
+  }
+
   // -----------------------------
   // Shared Google Sheet (Food tab)
   // -----------------------------
