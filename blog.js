@@ -1,5 +1,5 @@
 // blog.js - Fetch and submit community blog posts via Google Apps Script API
-const API_URL = "https://script.google.com/macros/s/AKfycby3aIe3AoHp_PMb45Y41dkOWW7j3LJXZpuXr3pImFWjk7OwkxHIZ7woOVu41TYDhfDEew/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbzuvRCudR7KDJecyqdnZqOupOYez0flI_YcGriS_RdzHxtcPYuP4-sPYg8SEe4rVOMSrQ/exec";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("#blog-form");
