@@ -198,6 +198,16 @@ a {
   background: rgba(14, 165, 233, 0.08);
 }
 
+.btn.icon-btn {
+  padding: 10px 12px;
+}
+
+.btn.icon-btn img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
 /* 5) Cards */
 .card {
   background: var(--card);
@@ -542,6 +552,13 @@ textarea {
   background: rgba(14, 165, 233, 0.1);
   color: var(--primary-dark);
   font-weight: 700;
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  display: block;
 }
 
 /* 10) Utility elements */
